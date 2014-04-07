@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>HCU_IMS</title>
+
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<style type="text/css">
+<!--
+body {
+	background-image: url();
+	background-repeat: repeat-x;
+	margin:0px 0px 0px 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../css/style1.css" >
+<link rel="stylesheet" type="text/css" media="all" href="../jscalendar/css/calendar-win2k-cold-1.css" title="win2k-cold-1" />
+<link rel="StyleSheet" href="../dtree/dtree.css" type="text/css" />
+<script type="text/javascript" src="../dtree/dtree.js"></script>
+<script type="text/javascript" src="../jscalendar/calendar.js"></script>
+<script type="text/javascript" src="../jscalendar/calendar-en.js"></script>
+<script type="text/javascript" src="../jscalendar/calendar-setup.js"></script>
+<script type="text/javascript" src="../java/datepicker.js"></script>
+<script type="text/javascript" src="../java/function.js"></script>
+<script type="text/javascript" src="../java/function2.js"></script>
+<style type="text/css">
+<!--
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+-->
+</style></head>
+
+<body>
+<?
+	include"connect_db2.php";
+?>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="50" background="../images/bg7.png"><span class="content16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>:: ระบบการเก็บรวบรวมข้อมูลและพัฒนาระบบฐานข้อมูล
+คณะวิทยาศาสตร์และเทคโนโลยีมหาวิทยาลัยหัวเฉียวเฉลิมพระเกียรติ</strong>&nbsp;(
+<?=grabUsrNamex(); ?> : <?=grabUsrCatx(); ?>)</span></td>
+  </tr>
+  </table>
+<table width="975" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="973"><table width="960" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="19" height="42" valign="top">&nbsp;</td>
+        <td width="172" height="42" valign="bottom" class="content2"><table width="100%" border="0" cellpadding="0" cellspacing="0" id="tablestyle2" style="white-space:nowrap">
+          <tr>
+            <td><strong>MAIN MENU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></td>
+          </tr>
+          <tr>
+            <td style="white-space:nowrap"><hr style="border-collapse:collapse"  color="#FFFFFF"/></td>
+          </tr>
+        </table></td>
+        <td width="36" height="42" valign="top" background="../images/bg5.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+        <td width="691" height="42" valign="bottom"  >
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+			<td width="50%" id="tablestyle1">
+			<!-- TemplateBeginEditable name="EditRegion2" --><!-- TemplateEndEditable --></td>
+			<td width="50%" align="right" class="content"><!-- TemplateBeginEditable name="EditRegion3" --><!-- TemplateEndEditable --></td>
+			</tr>
+			</table></td>
+          </tr>
+          <tr>
+            <td><hr style="border-collapse:collapse" color="#CCCCCC"/></td>
+          </tr>
+        </table>
+          </td>
+        <td width="42" height="42" valign="top" background="../images/bg5.png">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="19" valign="top" ><img src="../images/pane2-1.png" width="19" height="1" /></td>
+        <td width="172" valign="top" id="tablestyle2">
+		<div class="dtree">
+	<p>
+	<!--<a href="javascript: d.openAll();">Open all</a> | <a href="javascript: d.closeAll();">Close all</a>
+	--></p>
+	<br/>
+	<br/>
+<?
+	
+	if (! chkcanusethispage()) {
+		alertx("คุณไม่มีสิทธิใช้หน้านี้");
+		redirectx(gotoDefaultPage());
+	}
+?>
+	<script type="text/javascript">
+		<!--
+		d = new dTree('d');
+		d.add(0, -1, 'HCU SCIENCE.');
+<?
+	if ($_COOKIE["usr_menu"] == "teachermenu") {
+?>
+		
+		d.add(100, 0, 'หน้าแรก', 'home.php', 'หน้าแรก', '');
+		d.add(200, 0, 'SMS', 'sms_send1.php', '', '');
+		d.add(300, 0, 'ออกจากระบบ', 'logout.php', 'ออกจากระบบ', '');
+		
+		//d.add(350, 0, 'ฐานข้อมูลโครงการ');
+		//d.add(400, 350, 'โครงการ *', 'proj_home.php', '', '');
+		
+		d.add(450, 0, 'ฐานข้อมูลบุคลากร');
+		d.add(500, 450, 'ข้อมูล+ประวัติส่วนตัว', 'teacher_update1.php?frompage=teacher_update1.php&teaid=<?=$_COOKIE["usr_id"]; ?>', '', '');
+		d.add(550, 450, 'แก้ไขรหัสผ่าน', 'password_update1.php', '', '');
+		d.add(600, 450, 'การเรียนการสอน', 'teasbj_home.php', '', '');
+		d.add(800, 450, 'บันทึกการเข้าร่วมอบรม-สัมมนา', "traintea_home.php", '', '');
+		//d.add(900, 450, 'บันทึกเข้าร่วมโครงการ', 'join_home.php', '', '');
+		//d.add(1000, 450, 'แผนพัฒนาอาจารย์', 'teaplan_home.php', '', '');
+		//d.add(1025, 450, 'แบบสรุปปัญหาของนศ.', 'prob_home.php', '', '');
+		
+		//d.add(1050, 0, 'ฐานข้อมูลวิจัย');
+		//d.add(1100, 1050, 'ผลงานวิจัย *', 'rs_home.php', '', '');
+		//d.add(1200, 1050, 'ผลงานวิชาการ', 'acadwrk_home.php', '', '');
+		
+		//d.add(1250, 0, 'ฐานข้อมูลการเรียนการสอน');
+		//d.add(1300, 1250, 'ดัชนีคุณภาพการสอน', 'kpi_home.php', '', '');
+		//d.add(1400, 1250, 'TQF', 'tqf_home.php', '', '');
+		
+		d.add(1450, 0, 'ฐานข้อมูลตำรา');
+		d.add(1500, 1450, 'โครงการข้อมูลตำรา', 'bookproj_home.php', '', '');
+		d.add(1540, 1450, 'ข้อมูลตำรา', 'book_home.php', '', '');
+		d.add(1550, 1450, 'ข้อมูลบทความวิชาการ', 'article_home.php', '', '');
+		
+		//d.add(1550, 0, 'ฐานข้อมูลวัสดุอุปกรณ์');
+		//d.add(1600, 1550, 'ขอหนังสือ/วารสาร *', 'reqbook_home.php', '', '');
+		//d.add(1700, 1550, 'ขอครุภัณฑ์ *', 'reqtool_home.php', '', '');	
+<?
+	} else 
+	if ($_COOKIE["usr_menu"] == "bossmenu") {
+?>
+		d.add(100, 0, 'หน้าแรก', 'home.php', 'หน้าแรก', '');
+		d.add(200, 0, 'SMS', 'sms_send1.php', '', '');
+		d.add(300, 0, 'ออกจากระบบ', 'logout.php', 'ออกจากระบบ', '');
+		
+		d.add(400, 0, 'ฐานข้อมูลจัดการระบบ');
+		//d.add(500, 400, 'งบประมาณรายรับตั้งต้น', 'budget_home2.php', '', '');
+		//d.add(600, 400, 'ข้อมูลคุณภาพ', 'grad_home2.php', '', '');
+		//d.add(700, 400, 'เกณฑ์คัดเลือก นศ ใหม่', 'newstuiso_home2.php', '', '');
+		//d.add(800, 400, 'รายวิชาในระบบ', 'sbj_home2.php', '', '');
+		d.add(900, 400, 'รายวิชาที่เปิดสอน', "sbj_home2.php", '', '');
+		
+		//d.add(1000, 0, 'ฐานข้อมูลโครงการ');
+		//d.add(1100, 1000, 'โครงการ *', 'proj_home2.php', '', '');
+		
+		d.add(1200, 0, 'ฐานข้อมูลบุคลากร');
+		d.add(1300, 1200, 'User Account', 'usr_home2.php', '', '');
+		d.add(1400, 1200, 'ข้อมูลบุคลากร+ประวัติ', 'teacher_home2.php', '', '');
+		d.add(1500, 1200, 'ข้อมูลงานอบรม-สัมมนาฯ', "train_home2.php", '', '');
+		d.add(1600, 1200, 'การเรียนการสอน', 'teasbj_home2.php', '', '');
+		//d.add(1650, 1200, 'บันทึกการเข้าร่วมโครงการ', 'join_home2.php', '', '');
+		d.add(1675, 1200, 'แก้ไขรหัสผ่านของตน', 'password_update1.php', '', '');
+		
+		//d.add(1700, 0, 'ฐานข้อมูลวิจัย');
+		//d.add(1800, 1700, 'ผลงานวิจัย *', 'rs_home2.php', '', '');
+		//d.add(1900, 1700, 'ผลงานวิชาการ', 'acadwrk_home2.php', '', '');
+		
+		
+		//d.add(2000, 0, 'ฐานข้อมูลการเรียนการสอน');
+		//d.add(2100, 2000, 'TQF', 'tqf_home2.php', '', '');
+		
+		d.add(2200, 0, 'ฐานข้อมูลตำรา');
+		d.add(2300, 2200, 'ข้อมูลโครงการตำรา', 'bookproj_home2.php', '', '');
+		d.add(2340, 2200, 'ข้อมูลตำรา', 'book_home2.php', '', '');
+		d.add(2350, 2200, 'ข้อมูลบทความวิชาการ', 'article_home2.php', '', '');
+		
+		//d.add(2400, 0, 'ฐานข้อมูลวัสดุอุปกรณ์');
+		//d.add(2500, 2400, 'หนังสือ/วารสารที่ขอมา *', 'reqbook_home2.php', '', '');
+		//d.add(2600, 2400, 'ครุภัณฑ์ที่ขอมา *', 'reqtool_home2.php', '', '');
+		
+		d.add(2700, 0, 'ฐานข้อมูลรายงาน');
+		d.add(2800, 2700, 'ข้อมูลบุคลากร', 'teacher_report.php', '', '');
+		d.add(2900, 2700, 'ข้อมูลงานอบรม-สัมมนาฯ', 'train_report.php', '', '');
+		//d.add(2900, 2700, '#งบโครงการรายวิชา', 'report_budget02.php', '', '');
+		//d.add(3000, 2700, '#ตารางประเมินคุณภาพ', 'report_table.php', '', '');
+		//d.add(3100, 2700, '#รายวิชาที่เปิดสอน', 'report_sbjmdl01.php', '', '');
+		//d.add(3200, 2700, '#รายวิชา/รูปแบบการสอน', 'report_teasbjdata01.php', '', '');
+		//d.add(3300, 2700, '#แผนพัฒนาอ.', 'report_teaplan01.php', '', '');
+		//d.add(3400, 2700, '#เทียบรายรับรายจ่าย 2 ปี', 'report_budget03.php', '', '');
+		//d.add(3500, 2700, '#ค่าใช้จ่ายฝึกปฏิบัติ/คน', 'report_budget04.php', '', '');
+		//d.add(3600, 2700, '#ดัชนีรับรองสถาบันฯ', 'report_kpix.php', '', '');
+<?
+	}  else 
+	if ($_COOKIE["usr_menu"] == "specialmenu") {
+?>
+		d.add(300, 0, 'ออกจากระบบ', 'logout.php', 'ออกจากระบบ', '');
+<?
+	}
+?>
+		
+		document.write(d);
+		d.openAll();
+		//-->
+	</script>
+</div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br /></td>
+        <td width="36" valign="top" background="../images/bg5.png">&nbsp;</td>
+        <td width="691" valign="top"  id="tablestyle3" ><br />
+          <br/>
+		<!-- TemplateBeginEditable name="EditRegion" --><!-- TemplateEndEditable -->
+		</td>
+        <td width="42" valign="top" background="../images/bg5.png"><img src="../images/bg8.png" width="42" height="1" /></td>
+      </tr>
+      <tr>
+        <td width="19" height="19" valign="top">&nbsp;</td>
+        <td width="172" height="19" valign="top">&nbsp;</td>
+        <td width="36" height="19" valign="top" background="../images/bg5.png">&nbsp;</td>
+        <td width="691" height="19" valign="top">&nbsp;</td>
+        <td width="42" height="19" valign="top" background="../images/bg5.png">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

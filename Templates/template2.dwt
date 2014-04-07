@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>HCU_IMS</title>
+
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="stylesheet" type="text/css" href="../css/style1.css" >
+<link rel="stylesheet" type="text/css" media="all" href="../jscalendar/css/calendar-win2k-cold-1.css" title="win2k-cold-1" />
+<link rel="StyleSheet" href="../dtree/dtree.css" type="text/css" />
+<script type="text/javascript" src="../dtree/dtree.js"></script>
+<script type="text/javascript" src="../jscalendar/calendar.js"></script>
+<script type="text/javascript" src="../jscalendar/calendar-en.js"></script>
+<script type="text/javascript" src="../jscalendar/calendar-setup.js"></script>
+<script type="text/javascript" src="../java/datepicker.js"></script>
+<script type="text/javascript" src="../java/function.js"></script>
+<script type="text/javascript" src="../java/function2.js"></script>
+</head>
+
+<body>
+<table width="100%" border="0" class="content">
+  <tr>
+    <td valign="top">
+	<!-- TemplateBeginEditable name="EditRegion3" -->
+	
+	
+	<!-- TemplateEndEditable -->
+	</td>
+  </tr>
+</table>
+</body>
+</html>

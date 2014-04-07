@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>HCU_IMS</title>
+
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<style type="text/css">
+<!--
+body {
+	background-attachment:fixed;
+	background-image: url(../images/bg01.jpg);
+	background-repeat: repeat;
+	margin:0px 0px 0px 10px;
+}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="../css/style1.css" >
+<link rel="stylesheet" type="text/css" media="all" href="../jscalendar/css/calendar-win2k-cold-1.css" title="win2k-cold-1" />
+<link rel="StyleSheet" href="../dtree/dtree.css" type="text/css" />
+<script type="text/javascript" src="../dtree/dtree.js"></script>
+<script type="text/javascript" src="../jscalendar/calendar.js"></script>
+<script type="text/javascript" src="../jscalendar/calendar-en.js"></script>
+<script type="text/javascript" src="../jscalendar/calendar-setup.js"></script>
+<script type="text/javascript" src="../java/datepicker.js"></script>
+<script type="text/javascript" src="../java/function.js"></script>
+<script type="text/javascript" src="../java/function2.js"></script>
+</head>
+
+<body>
+<table width="761" border="0">
+  <tr>
+    <td valign="top"><div class="dtree">
+      <p>
+        <!--<a href="javascript: d.openAll();">Open all</a> | <a href="javascript: d.closeAll();">Close all</a>
+	-->
+      </p>
+      <br/>
+      <br/>
+      <script type="text/javascript">
+		<!--
+		d = new dTree('d');
+		d.add(0, -1, 'HCU IMS.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+		d.add(1, 0, 'หน้าแรก', 'home.php', 'หน้าแรก', '');
+		d.add(2, 0, 'ข้อมูลอาจารย์');
+		d.add(3, 2, 'เพิ่มข้อมูลอาจารย์', 'teacher_insert.php', 'ข้อมูลอาจารย์ -> เพิ่มข้อมูลอาจารย์', '');
+		d.add(4, 2, 'ดู / แก้ไขข้อมูลอาจารย์', 'teacher_update.php', 'ข้อมูลอาจารย์ -> แก้ไขข้อมูลอาจารย์', '');
+		d.add(6, 2, 'ลบข้อมูลอาจารย์', 'teacher_delete.php', 'ข้อมูลอาจารย์ -> ลบข้อมูลอาจารย์', '');
+		d.add(7, 0, 'โครงการ');
+		d.add(8, 7, 'เขียนโครงการนำเสนอ', 'projp_insert1.php', '', '');
+		d.add(9, 7, 'แก้ไขโครงการนำเสนอ', 'projp_update2.php?projid=25&frompage=projp_insert1.php', '', '');
+		d.add(10, 7, 'เขียนโครงการรายงานผล', 'projc_insert2.php?projid=25&frompage=projp_insert1.php', '', '');
+		d.add(11, 7, 'แก้ไขโครงการรายงานผล', 'projc_update2.php?projid=25&frompage=projp_insert1.php', '', '');
+		d.add(12, 7, 'ดูโครงการนำเสนอ', 'projp_view.php?projid=25', '', '');
+		d.add(13, 7, 'ดูโครงการรายงานผล', 'projc_view.php?projid=25', '', '');
+		d.add(14, 7, 'หน้าหลักโครงการ', 'proj_home.php', '', '');
+		d.add(15, 7, 'หน้าหลักโครงการสำหรับเลขา', 'proj_home2.php', '', '');
+		d.add(16, 0, 'ผลงานวิจัย');
+		d.add(17, 16, 'เพิ่มผลงานวิจัย', 'rs_insert1.php?frompage=rs_insert1.php', '', '');
+		d.add(18, 16, 'แก้ไขผลงานวิจัย', 'rs_update1.php?frompage=home.php&researchid=12', '', '');
+		d.add(19, 16, 'ดูผลงานวิจัย', 'rs_view.php?researchid=12', '', '');
+		d.add(20, 16, 'หน้าหลักผลงานวิจัย', 'rs_home.php', '', '');
+		d.add(21, 16, 'หน้าหลักผลงานวิจัยสำหรับเลขา', 'rs_home2.php', '', '');
+		d.add(22, 0, 'รายวิชาที่เปิดสอนในแต่ละปี/ภาค');
+		d.add(23, 22, 'หน้าหลักรายวิชาที่เปิดสอนในแต่ละปี/ภาค', 'sbjmdl_home.php', '', '');
+		d.add(24, 0, 'หน้าหลักภาระงานสอน', 'teasbj_home.php', '', '');
+		d.add(25, 0, 'งานนิพนธ์และที่ปรึกษางานนิพนธ์');
+		d.add(26, 25, 'หน้าหลักงานนิพนธ์และที่ปรึกษางานนิพนธ์', 'thesis_home.php', '', '');
+		d.add(27, 0, 'ผลงานวิชาการ');
+		d.add(28, 27, 'หน้าหลักผลงานวิชาการ', 'acadwrk_home.php', '', '');
+		d.add(29, 0, 'รายวิชา');
+		d.add(30, 29, 'หน้าหลักรายวิชาเลขา', 'sbj_home2.php', '', '');
+		d.add(31, 30, 'หน้าหลักข้อมูลอาจารย์', 'teacher_home2.php', '', '');
+		d.add(32, 0, 'ออกจากระบบ', 'logout.php', 'ออกจากระบบ', '');
+		
+		document.write(d);
+		d.openAll();
+		//-->
+	</script>
+    </div></td>
+    <td valign="top"><table width="731" border="1" cellpadding="4" bordercolor="#FFFFFF" style="border-collapse:collapse">
+      <tr>
+        <td background="../images/bg_pane.png"><table width="731" border="0">
+          <tr>
+            <td id="tablestyle1"><!-- TemplateBeginEditable name="EditRegion2" --><!-- TemplateEndEditable --><br />
+              <br /></td>
+          </tr>
+          <tr>
+            <td><!-- TemplateBeginEditable name="EditRegion" --><!-- TemplateEndEditable --></td>
+          </tr>
+        </table>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <table width="100%" border="0" cellpadding="4" class="content3">
+            <tr>
+              <td align="right">&nbsp;</td>
+            </tr>
+          </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>
